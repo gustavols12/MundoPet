@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -21,6 +21,13 @@ export function Cart() {
     total.replace("R$", "").replace(/\./g, "").replace(",", ".")
   );
   const discountedTotal = numericTotal - numericTotal * 0.1;
+
+  useEffect(() => {
+    // Se o cupom for apagado ou inválido, remove o desconto
+    if (!cupons.includes(cupom.toLowerCase())) {
+      setIsValid(false);
+    }
+  }, [cupom]);
 
   function validateCoupon() {
     if (cupons.includes(cupom.toLowerCase())) {
@@ -137,7 +144,14 @@ export function Cart() {
                   name="cupom"
                   placeholder="Insira seu cupom"
                   value={cupom}
-                  onChange={(e) => setCupom(e.target.value)}
+                  onChange={(e) => {
+                    const valor = e.target.value;
+                    setCupom(valor);
+
+                    if (valor.trim() === "") {
+                      setIsValid(false);
+                    }
+                  }}
                   onInput={() => setIsFocused(true)}
                 />
 

@@ -15,13 +15,21 @@ export interface ProductProps {
 
 export function Home() {
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const { addItemCart } = useContext(CartContext);
 
   useEffect(() => {
     async function getProduts() {
-      const response = await api.get("/products");
-      setProducts(response.data);
+      try {
+        const response = await api.get("/products");
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar produtos:", error);
+        toast.error("Erro ao carregar produtos!");
+      } finally {
+        setLoading(false);
+      }
     }
     getProduts();
   }, []);
@@ -29,6 +37,17 @@ export function Home() {
   function handleAddCart(produto: ProductProps) {
     addItemCart(produto);
     toast.success("Produto adicionado!");
+  }
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-[300px]">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-500 border-solid"></div>
+        <p className="mt-4 text-orange-500 text-lg font-medium">
+          Carregando produtos...
+        </p>
+      </div>
+    );
   }
 
   return (
