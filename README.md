@@ -1,94 +1,80 @@
 
-# 🐾 MundoPet
+# 🐶 Mundo Pet
 
-**MundoPet** é uma aplicação web que simula funcionalidades de um e-commerce voltado para o universo pet. Desenvolvida com **React.js**, **TypeScript**, **Tailwind CSS** e **JSON Server**, a aplicação permite ao usuário visualizar produtos, acessar detalhes, adicionar ao carrinho, aplicar cupons e escolher formas de pagamento.
+Aplicação de e-commerce voltada para produtos pets. O usuário pode visualizar produtos, adicionar itens ao carrinho, aplicar cupons de desconto e finalizar a compra via WhatsApp.
 
----
+## 🚀 Tecnologias
 
-## 🚀 Tecnologias Utilizadas
-
-- [React.js](https://reactjs.org/)
+- [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+- [React Hot Toast](https://react-hot-toast.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [Vite](https://vitejs.dev/)
-- [React Router DOM](https://reactrouter.com/)
-- [Context API](https://reactjs.org/docs/context.html)
-- [JSON Server](https://github.com/typicode/json-server)
 
----
+## 🧩 Funcionalidades
 
-## 💻 Como Rodar o Projeto
+- Listagem de produtos
+- Página de detalhes dos produtos
+- Aplicação de cupons de desconto
+- Escolha de forma de pagamento
+- Finalização do pedido via WhatsApp
 
-1. **Clone o repositório:**
+## 🌐 API
 
-```bash
-git clone https://github.com/gustavols12/MundoPet.git
-cd MundoPet
+A aplicação utiliza uma API hospedada na plataforma Render:
+
+🔗 **https://mundopet-api-1.onrender.com/db**
+
+- Endpoint de produtos: `/products`
+
+A API foi migrada do ambiente local (`json-server`) para um ambiente online, para garantir acessibilidade em produção. O arquivo `db.json` ainda está presente na raiz do projeto como referência.
+
+## 🖥️ Como executar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gustavols12/MundoPet.git
+   ```
+
+2. Instale as dependências:
+   ```bash
+   cd MundoPet
+   npm install
+   ```
+
+3. Execute o projeto:
+   ```bash
+   npm run dev
+   ```
+
+A aplicação estará disponível em: `http://localhost:5173`
+
+## 💡 Cupons de desconto válidos
+
+- `primeira`
+- `primeira10`
+- `mundopet`
+- `mundopet10`
+
+Aplicam 10% de desconto no total do pedido.
+
+## 📦 Estrutura de pastas
+
 ```
-
-2. **Instale as dependências:**
-
-```bash
-npm install
-```
-
-3. **Inicie o servidor de API fake com o JSON Server:**
-
-```bash
-npx json-server --watch db.json --port 3000
-```
-
-4. **Rode o servidor de desenvolvimento do Vite:**
-
-```bash
-npm run dev
-```
-
-5. **Acesse no navegador:**
-
-```
-http://localhost:5173
-```
-
----
-
-## 🛒 Funcionalidades
-
-- ✅ Listagem de produtos populares
-- ✅ Página de detalhes do produto
-- ✅ Adicionar e remover produtos do carrinho
-- ✅ Persistência do carrinho com `localStorage`
-- ✅ Aplicação de cupons de desconto
-- ✅ Seleção de formas de pagamento
-- ✅ Navegação entre páginas com React Router
-- ✅ Estilização com Tailwind CSS
-
----
-
-## 📂 Estrutura do Projeto
-
-```bash
 src/
-├── components/       # Componentes reutilizáveis (Header, Layout, etc.)
-├── context/          # Lógica global (ex: carrinho de compras)
-├── pages/            # Páginas principais (Home, Cart, Detail, NotFound)
-├── services/         # Integração com API fake (JSON Server)
-├── App.tsx           # Componente principal da aplicação
-└── main.tsx          # Ponto de entrada da aplicação
+├── components/
+├── context/
+│   └── CartContext.tsx
+├── pages/
+│   ├── home/
+│   ├── detail/
+│   └── cart/
+├── services/
+│   └── api.ts
+└── App.tsx
 ```
 
----
 
-## 📦 Observações
-
-- O estado do carrinho é gerenciado por meio do **React Context**.
-- A API fake está em `db.json`, e é utilizada para simular requisições HTTP reais.
-
----
-
-## ✨ Resultado
-
-Acesse o repositório e confira a aplicação em funcionamento!
-
-🔗 [MundoPet no GitHub](https://github.com/gustavols12/MundoPet)
 
