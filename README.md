@@ -1,15 +1,21 @@
+
 # 🐾 MundoPet
 
-**MundoPet** é uma aplicação de e-commerce voltada para produtos pet, desenvolvida com **React**, **TypeScript** e **Vite**. Ela permite ao usuário navegar entre produtos, visualizar detalhes, adicionar ao carrinho e aplicar cupons e formas de pagamento. Os dados do carrinho são persistidos no `localStorage`, mesmo após a atualização da página.
+**MundoPet** é uma aplicação web que simula funcionalidades de um e-commerce voltado para o universo pet. Desenvolvida com **React.js**, **TypeScript**, **Tailwind CSS** e **JSON Server**, a aplicação permite ao usuário visualizar produtos, acessar detalhes, adicionar ao carrinho, aplicar cupons e escolher formas de pagamento.
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
-- [React](https://reactjs.org/)
+- [React.js](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
-- [React Router](https://reactrouter.com/)
+- [React Router DOM](https://reactrouter.com/)
 - [Context API](https://reactjs.org/docs/context.html)
-- [LocalStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [JSON Server](https://github.com/typicode/json-server)
+
+---
 
 ## 💻 Como Rodar o Projeto
 
@@ -18,30 +24,71 @@
 ```bash
 git clone https://github.com/gustavols12/MundoPet.git
 cd MundoPet
+```
+
+2. **Instale as dependências:**
+
+```bash
 npm install
+```
+
+3. **Inicie o servidor de API fake com o JSON Server:**
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+4. **Rode o servidor de desenvolvimento do Vite:**
+
+```bash
 npm run dev
+```
+
+5. **Acesse no navegador:**
+
+```
+http://localhost:5173
+```
+
+---
 
 ## 🛒 Funcionalidades
-Listagem de produtos
 
-° Página de detalhes do produto
+- ✅ Listagem de produtos populares
+- ✅ Página de detalhes do produto
+- ✅ Adicionar e remover produtos do carrinho
+- ✅ Persistência do carrinho com `localStorage`
+- ✅ Aplicação de cupons de desconto
+- ✅ Seleção de formas de pagamento
+- ✅ Navegação entre páginas com React Router
+- ✅ Estilização com Tailwind CSS
 
-° Carrinho com persistência no localStorage
-
-° Aplicação de cupons
-
-° Seleção de formas de pagamento
-
-° Navegação entre páginas com React Router
+---
 
 ## 📂 Estrutura do Projeto
-bash
-Copiar
-Editar
+
+```bash
 src/
 ├── components/       # Componentes reutilizáveis (Header, Layout, etc.)
-├── context/          # Contexto do carrinho de compras
-├── pages/            # Páginas principais (home, cart, detail, notFound)
-├── services/         # Conexão com a API
+├── context/          # Lógica global (ex: carrinho de compras)
+├── pages/            # Páginas principais (Home, Cart, Detail, NotFound)
+├── services/         # Integração com API fake (JSON Server)
 ├── App.tsx           # Componente principal da aplicação
 └── main.tsx          # Ponto de entrada da aplicação
+```
+
+---
+
+## 📦 Observações
+
+- O estado do carrinho é gerenciado por meio do **React Context**.
+- A API fake está em `db.json`, e é utilizada para simular requisições HTTP reais.
+
+---
+
+## ✨ Resultado
+
+Acesse o repositório e confira a aplicação em funcionamento!
+
+🔗 [MundoPet no GitHub](https://github.com/gustavols12/MundoPet)
+
