@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# 🐾 MundoPet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MundoPet** é uma aplicação de e-commerce voltada para produtos pet, desenvolvida com **React**, **TypeScript** e **Vite**. Ela permite ao usuário navegar entre produtos, visualizar detalhes, adicionar ao carrinho e aplicar cupons e formas de pagamento. Os dados do carrinho são persistidos no `localStorage`, mesmo após a atualização da página.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [Context API](https://reactjs.org/docs/context.html)
+- [LocalStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
-## Expanding the ESLint configuration
+## 💻 Como Rodar o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone o repositório:**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+```bash
+git clone https://github.com/gustavols12/MundoPet.git
+cd MundoPet
+npm install
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛒 Funcionalidades
+Listagem de produtos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+° Página de detalhes do produto
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+° Carrinho com persistência no localStorage
+
+° Aplicação de cupons
+
+° Seleção de formas de pagamento
+
+° Navegação entre páginas com React Router
+
+📂 Estrutura do Projeto
+bash
+Copiar
+Editar
+src/
+├── components/       # Componentes reutilizáveis (Header, Layout, etc.)
+├── context/          # Contexto do carrinho de compras
+├── pages/            # Páginas principais (home, cart, detail, notFound)
+├── services/         # Conexão com a API
+├── App.tsx           # Componente principal da aplicação
+└── main.tsx          # Ponto de entrada da aplicação
