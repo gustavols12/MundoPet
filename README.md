@@ -21,7 +21,7 @@ cd MundoPet
 npm install
 npm run dev
 
-🛒 Funcionalidades
+## 🛒 Funcionalidades
 Listagem de produtos
 
 ° Página de detalhes do produto
@@ -34,7 +34,7 @@ Listagem de produtos
 
 ° Navegação entre páginas com React Router
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 bash
 Copiar
 Editar
